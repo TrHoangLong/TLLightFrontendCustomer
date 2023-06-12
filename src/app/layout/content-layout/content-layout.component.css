@@ -1,0 +1,27 @@
+.logout {
+    position: absolute;
+    bottom: 2%;
+}
+
+.body {
+    padding-top: 15px;
+    padding-left: 15px;
+    height: 85%;
+    width: 100%;
+}
+
+.example-container {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.sideNavOpen{
+    width: 90%;
+    transition: all .1s;
+}
+
+.header{
+    position: sticky;
+    top: 0px;
+}

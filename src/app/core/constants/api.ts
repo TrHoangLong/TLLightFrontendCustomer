@@ -1,0 +1,1 @@
+export const HOST_CUST= 'http://localhost:8686/apicust/'

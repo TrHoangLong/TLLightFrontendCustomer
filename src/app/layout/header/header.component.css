@@ -1,0 +1,22 @@
+.header {
+    height: 60px;
+    background-color: #bdab45;
+    display: flex;
+}
+
+.logoImage {
+    height: 110px;
+    cursor: pointer;
+}
+
+
+.user {
+    display: flex;
+    justify-content: end;
+    width: 90%;
+}
+
+mat-icon {
+    color: whitesmoke;
+    font-size: 35px;
+}

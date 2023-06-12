@@ -1,0 +1,19 @@
+<mat-toolbar class="header">
+    <div class="col-10 home">
+        <img class="logoImage" src="../../../assets/images/logheader.svg" alt="" (click)="routerMenu('home')">
+    </div>
+
+    <div class="col user">
+        <button mat-button class="material-icons" (click)="routerMenu('cart')">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-button class="material-icons" aria-label="Logout" [matMenuTriggerFor]="info">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #info="matMenu" yPosition="below">
+            <button mat-menu-item (click)="routerMenu('user-info')">Thông tin khách hàng</button>
+            <button mat-menu-item (click)="routerMenu('order-hist')">Quản lý đơn hàng</button>
+            <button mat-menu-item>Đăng xuất</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
