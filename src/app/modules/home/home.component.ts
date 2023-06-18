@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductService } from 'src/app/core/service/product.service';
 import { ProductDialogComponent } from './page/product-dialog/product-dialog.component';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { LINK_IMAGE } from 'src/app/core/constants/api';
 
 @Component({
   selector: 'app-home',
@@ -25,10 +26,12 @@ export class HomeComponent implements OnInit {
   totalRow: number;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  linkImage: string;
   constructor(private dialog: MatDialog,
     private roleService: RoleService,
     private utilsService: UtilsService,
     private productSevice: ProductService) {
+      this.linkImage = LINK_IMAGE;
   }
 
   ngOnInit(): void {

@@ -5,6 +5,7 @@ import { RoleService } from 'src/app/share/service/role.service';
 import { UtilsService } from 'src/app/share/service/utils.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from 'src/app/modules/auth/login/login.component';
+import { LINK_IMAGE } from 'src/app/core/constants/api';
 
 @Component({
   selector: 'app-header',
@@ -17,11 +18,15 @@ export class HeaderComponent implements OnInit {
 
   @Output() sideNav: EventEmitter<any> = new EventEmitter();
 
+  linkImage: string;
+
   constructor(private router: Router,
     private dialog: MatDialog,
     private roleService: RoleService,
     private authService: AuthService,
-    private utilsService: UtilsService) { }
+    private utilsService: UtilsService) { 
+      this.linkImage = LINK_IMAGE;
+    }
 
   ngOnInit(): void {
     this.checkLogin();
