@@ -21,19 +21,32 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { HomeComponent } from './home.component';
 import { CartComponent } from './page/cart/cart.component';
 import { OrderHistComponent } from './page/order-hist/order-hist.component';
 import { UserInfoComponent } from './page/user-info/user-info.component';
+import { ProductDialogComponent } from './page/product-dialog/product-dialog.component';
+import { CartDialogComponent } from './page/cart/cart-dialog/cart-dialog.component';
+import { InfoShopComponent } from './page/info-shop/info-shop.component';
+import { ContactShopComponent } from './page/contact-shop/contact-shop.component';
+import { OrderHistDialogComponent } from './page/order-hist/order-hist-dialog/order-hist-dialog.component';
+import { UserInfoDialogComponent } from './page/user-info/user-info-dialog/user-info-dialog.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CartComponent,
     OrderHistComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    ProductDialogComponent,
+    CartDialogComponent,
+    InfoShopComponent,
+    ContactShopComponent,
+    OrderHistDialogComponent,
+    UserInfoDialogComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +70,9 @@ import { UserInfoComponent } from './page/user-info/user-info.component';
     MatMenuModule,
     MatDatepickerModule,
     MatToolbarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatListModule,
+    MatTabsModule
   ]
 })
 export class HomeModule { }

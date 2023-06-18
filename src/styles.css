@@ -9,9 +9,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   }
   
   .greenSnackbar {
-    background: #bdab45;
+    background: #11bf54;
     color: white;
   }
-  
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.footer-table .footer-right .mat-form-field-wrapper {
+  padding-bottom: 1.34375em;
+}

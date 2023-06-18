@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { SelectionModel } from '@angular/cdk/collections';
+import { MatDialog } from '@angular/material/dialog';
+import { UtilsService } from 'src/app/share/service/utils.service';
+import { RoleService } from 'src/app/share/service/role.service';
+import { AuthService } from 'src/app/core/service/auth.service';
+import { CartService } from 'src/app/core/service/cart.service';
+import { ProductService } from 'src/app/core/service/product.service';
+import { CUST_CART_STATUS } from 'src/app/core/constants/cust-cart';
+import { CartDialogComponent } from './cart-dialog/cart-dialog.component';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +17,113 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  custCartList: any;
+  productList: any;
+  statusList: any;
+
+  checked = false;
+
+  selection = new SelectionModel<any>(true, []);
+
+  constructor(private dialog: MatDialog,
+    private roleService: RoleService,
+    private utilsService: UtilsService,
+    private productSevice: ProductService,
+    private cartService: CartService) {
+      this.statusList = CUST_CART_STATUS;
+    }
 
   ngOnInit(): void {
+    this.search();
+    this.getAllProduct();
   }
 
+  getStatus(status: any): any {
+    if (this.statusList == undefined) {
+      return '';
+    }
+    if (typeof status === 'string') {
+      for (const data of this.statusList) {
+        if (data.value === status) {
+          return data;
+        }
+      }
+    } else {
+      for (const data of this.statusList) {
+        if (data.data === status) {
+          return data;
+        }
+      }
+    }
+    return '';
+  }
+
+  search() {
+    this.cartService.getCartForCust({}).subscribe(response => {
+      if (response.resultCode == 0) {
+        this.custCartList = response.data;
+      }
+      else {
+        this.utilsService.processResponseError(response, 'Lỗi: ' + response.errorMsg);
+      }
+    });
+  }
+
+  getAllProduct() {
+    this.productSevice.productGet({}).subscribe(response => {
+      if (response.resultCode == 0) {
+        this.productList = response.data;
+      } else {
+        this.utilsService.processResponseError(response, 'Lỗi: ' + response.errorMsg);
+      }
+    });
+  }
+
+  onChangeSelected(element): void {
+    this.selection.toggle(element);
+  }
+
+  update(cart: any) {
+    const dialogRef = this.dialog.open(CartDialogComponent, {
+      width: '400px',
+      data: {
+        action: 'Update',
+        data: cart
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.search();
+    });
+  }
+
+  delete(cart: any) {
+    const dialogRef = this.dialog.open(CartDialogComponent, {
+      width: '400px',
+      data: {
+        action: 'Delete',
+        data: cart
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.search();
+    });
+  }
+
+  order() {
+    const cart = this.selection.selected;
+
+    const dialogRef = this.dialog.open(CartDialogComponent, {
+      width: '400px',
+      data: {
+        action: 'CartOrder',
+        data: cart
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.search();
+    });
+  }
 }

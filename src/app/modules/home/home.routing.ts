@@ -5,6 +5,8 @@ import {HomeComponent} from './home.component';
 import { CartComponent } from './page/cart/cart.component';
 import { UserInfoComponent } from './page/user-info/user-info.component';
 import { OrderHistComponent } from './page/order-hist/order-hist.component';
+import { InfoShopComponent } from './page/info-shop/info-shop.component';
+import { ContactShopComponent } from './page/contact-shop/contact-shop.component';
 
 const routes: Routes =[
     {
@@ -30,6 +32,14 @@ const routes: Routes =[
             {
                 path: 'order-hist',
                 component: OrderHistComponent
+            },
+            {
+                path: 'info-shop',
+                component: InfoShopComponent
+            },
+            {
+                path: 'contact-shop',
+                component: ContactShopComponent
             },
         ]
       }

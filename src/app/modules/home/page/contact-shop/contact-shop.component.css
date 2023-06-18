@@ -1,0 +1,14 @@
+mat-icon{
+    color: #11bf54;
+    margin-right: 10px;
+}
+
+.content {
+    display: flex;
+    height: 80%;
+    margin: 3%;
+}
+
+.mapouter {
+    margin-right: 3%;
+}

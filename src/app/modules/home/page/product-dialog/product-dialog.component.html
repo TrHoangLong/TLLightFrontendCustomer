@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <img [src]="product.linkProductImage" class="image mat-elevation-z8 ">
+    </mat-drawer>
+    <mat-drawer-content>
+        <h1>{{product.productName}}</h1>
+        <h3>Giá bán: {{product.productPrice | number: '1.0-0'}}</h3>
+
+        <div class="input">
+            <mat-form-field appearance="outline">
+                <mat-label>Số lượng</mat-label>
+                <input type="text" matInput [(ngModel)]="quantity">
+            </mat-form-field>
+        </div>
+
+        <mat-list class="decription">
+            <h2>Mô tả: </h2>
+            <mat-list-item *ngFor="let item of getDescription(product.description)">{{item}}</mat-list-item>
+        </mat-list>
+    </mat-drawer-content>
+</mat-drawer-container>
+<br>
+<div class="boxButton">
+    <button mat-stroked-button class="btnCart" (click)="addCart()">
+        <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <button mat-raised-button class="btn" (click)="productOrder()">Đặt hàng</button>
+</div>

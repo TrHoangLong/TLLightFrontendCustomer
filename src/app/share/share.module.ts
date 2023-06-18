@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SnackBarMessagesComponent } from './snack-bar-messages/snack-bar-messages.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SnackBarMessagesComponent
+  ],
   imports: [
     CommonModule
   ]

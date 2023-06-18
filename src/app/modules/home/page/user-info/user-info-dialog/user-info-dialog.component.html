@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>{{title}}</h1>
+
+<div mat-dialog-content>
+    <mat-grid-list cols="2" rowHeight="3:1" *ngIf="action === ACTION_UPDATE">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Họ tên</mat-label>
+                <input type="text" matInput [(ngModel)]="custName" required>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Giới tính: </mat-label>
+                <mat-select [(value)]="gender" class="select" required>
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let gender of genderList"
+                        value="{{gender.value}}">{{gender.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline" class="example-full-width date">
+                <mat-label>Ngày sinh: </mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="birthday"
+                    name="birthday" required>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Số điện thoại</mat-label>
+                <input type="text" matInput [(ngModel)]="mobileNo" required>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="text" matInput [(ngModel)]="email" required>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Địa chỉ</mat-label>
+                <input type="text" matInput [(ngModel)]="address" required>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-stroked-button class="btnNo" (click)="onNoClick()">Đóng</button>
+    <button mat-raised-button (click)="onYesClick()" class="btnYes" color="primary">{{messageYes}}</button>
+</div>

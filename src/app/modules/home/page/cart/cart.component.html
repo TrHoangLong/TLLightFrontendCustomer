@@ -1,1 +1,42 @@
-<p>cart works!</p>
+<div class="boxTitle">
+    <p class="title">Giỏ hàng</p>
+    <br>
+    <hr>
+    <button class="btnOrder" mat-raised-button (click)="order()">Đặt hàng</button>
+</div>
+
+<div class="cartContent">
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" hidden></mat-sidenav>
+
+        <mat-sidenav-content>
+            <mat-grid-list cols="1" rowHeight="6:1">
+                <mat-grid-tile *ngFor="let cart of custCartList">
+                    <mat-card class="example-card mat-elevation-z8">
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" (click)="$event.stopPropagation()"
+                                (change)="onChangeSelected(cart)" [checked]="selection.isSelected(cart)"
+                                [disabled]="cart.status == 2">
+                            </mat-checkbox>
+                        </section>
+                        <div class="boxImage">
+                            <img class="productImage" [src]="cart.linkProductImage">
+                        </div>
+                        <mat-card-content class="boxContent">
+                            <h1>{{cart.productName}}</h1>
+                            <h3><span>Giá: </span>{{cart.productPrice | number: '1.0-0'}} <span> - Số lượng mua hàng: </span> {{cart.quantity |
+                                number: '1.0-0'}}</h3>
+                            <h3><span>Tổng tiền:</span> {{cart.totalCart | number: '1.0-0'}}</h3>
+                            <h3><span>Trạng thái:</span> {{getStatus(cart.status).name}}</h3>
+                        </mat-card-content>
+                        <div class="boxIcon">
+                            <button class="btn" mat-mini-fab (click)="delete(cart)"><mat-icon>clear</mat-icon></button>
+                            <button class="btn" mat-mini-fab (click)="update(cart)"><mat-icon>edit</mat-icon></button>
+                        </div>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>

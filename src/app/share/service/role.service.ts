@@ -7,7 +7,7 @@ import { SysRole } from 'src/app/data/schema/sys-role';
 export class RoleService {
 
   ROLE_KEY = 'access';
-  USERNAME = 'username';
+  EMAIL = 'email';
   PASSWORD = 'password';
 
   TOKEN_KEY = 'log-in';
@@ -34,22 +34,22 @@ export class RoleService {
     return data.map(item => item.roleCode.toLowerCase()).includes(role.toLowerCase());
   }
 
-  public saveLogin(username: string, password: string): void {
-    window.localStorage.removeItem(this.USERNAME);
+  public saveLogin(email: string, password: string): void {
+    window.localStorage.removeItem(this.EMAIL);
     window.localStorage.removeItem(this.PASSWORD);
-    window.localStorage.setItem(this.USERNAME, username);
+    window.localStorage.setItem(this.EMAIL, email);
     window.localStorage.setItem(this.PASSWORD, password);
   }
 
   public removeLogin(): void {
-    window.localStorage.removeItem(this.USERNAME);
+    window.localStorage.removeItem(this.EMAIL);
     window.localStorage.removeItem(this.PASSWORD);
   }
 
   public getLogin(): any {
-    const username = window.localStorage.getItem(this.USERNAME);
+    const email = window.localStorage.getItem(this.EMAIL);
     const password = window.localStorage.getItem(this.PASSWORD);
-    return { username, password };
+    return { email, password };
   }
 
   public setSaveLogin(value: any): void {
@@ -64,7 +64,7 @@ export class RoleService {
     window.localStorage.setItem(this.TOKEN_KEY, token);
   }
 
-  public getToken(): string | null {
+  public getToken(): string {
     return window.localStorage.getItem(this.TOKEN_KEY);
   }
 

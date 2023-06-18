@@ -4,3 +4,56 @@
 .container{
     background-color: white;
 }
+
+
+::ng-deep .mat-row:hover .mat-cell {
+    background-color: rgb(194, 194, 194);
+}
+
+::ng-deep .mat-cell {
+    padding: 8px 8px 8px 8px;
+    font-family: Roboto, sans-serif;
+}
+
+::ng-deep .mat-form-field {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 4px;
+    padding: 4px;
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    height: 42px !important;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+    top: -1.5em;
+}
+
+::ng-deep .mat-form-field-infix {
+    padding-top: 0 !important;
+    display: flex !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    position: relative;
+    color: black;
+}
+
+::ng-deep .mat-header-cell {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    justify-content: center !important;
+    font-size: 13px;
+    color: #1a084c;
+}
+
+::ng-deep .mat-row:nth-child(even) {
+    background-color: #D3D3D3;
+}
+
+::ng-deep .mat-row:nth-child(odd) {
+    background-color: #F5F5F5;
+}

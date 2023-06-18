@@ -1,0 +1,88 @@
+.boxTitle {
+    max-width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.cartContent {
+    height: 85%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+mat-sidenav-container {
+    width: 100%;
+    
+}
+
+mat-sidenav-content {
+    background-color: white;
+    max-height: 100%;
+}
+
+
+.example-card {
+    width: 60%;
+    height: 80%;
+    border: solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.example-section {
+    width: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxImage {
+    width: 20%;
+    height: 90%;
+    padding-right: 2%;
+}
+
+.productImage {
+    width: 100%;
+    height: 100%;
+    border: solid;
+    border-radius: 10px;
+}
+
+.boxContent {
+    width: 67%;
+    height: 100%;
+}
+
+.boxIcon {
+    width: 3%;
+    height: 100%;
+    display: flexbox;
+    justify-content: right;
+    align-items: start;
+}
+
+.btn {
+    background-color: #11bf54;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.btnOrder {
+    background-color: #11bf54;
+    color: white;
+    margin-left: 19%;
+}
+
+span {
+    font-weight: 600;
+}

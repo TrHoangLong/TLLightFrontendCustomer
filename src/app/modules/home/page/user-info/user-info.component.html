@@ -1,1 +1,70 @@
-<p>user-info works!</p>
+<div class="boxTitle">
+    <p class="title">Thông tin cá nhân</p>
+    <br>
+    <hr>
+</div>
+
+<div class="boxContent">
+    <mat-card class="mat-elevation-z8">
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="5:1">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Mã người dùng: </mat-label>
+                        <input type="text" [(ngModel)]="userInfo.custUserId" matInput disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Họ và tên: </mat-label>
+                        <input type="text" [(ngModel)]="userInfo.custName" matInput disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Giới tính: </mat-label>
+                        <input type="text" [(ngModel)]="getGender(userInfo.gender).name" matInput disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width date">
+                        <mat-label>Ngày sinh: </mat-label>
+                        <input matInput [matDatepicker]="picker" disabled [(ngModel)]="userInfo.birthday"
+                            name="birthday">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Số điện thoại: </mat-label>
+                        <input type="text" [(ngModel)]="userInfo.mobileNo" matInput disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Email: </mat-label>
+                        <input type="text" [(ngModel)]="userInfo.email" matInput disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Địa chỉ: </mat-label>
+                        <input type="text" [(ngModel)]="userInfo.address" matInput disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+        <div class="boxButton">
+            <button mat-stroked-button class="btnCart" (click)="update(userInfo)">
+                <mat-icon>edit</mat-icon> Sửa thông tin
+            </button>
+        </div>
+    </mat-card>
+</div>

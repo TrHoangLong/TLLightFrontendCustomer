@@ -1,68 +1,99 @@
-::ng-deep .success {
-    color: white;
-    background: #3f51b5;
+.banner {
+    height: 90%;
 }
 
-::ng-deep .fail {
-    color: white;
-    background: #f44336;
+mat-tab-group {
+    width: 100%;
+    height: 100%;
+    align-items: center;
 }
 
-.header {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
+.content {
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-button {
-    margin: 15px;
-}
-
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 300px;
-    gap: 20px;
-}
-
-.box2 {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    position: relative;
-}
-
-.box3 {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    position: relative;
-}
-
-table {
-    min-width: 100%;
+::ng-deep .mat-tab-body-wrapper {
+    width: 100%;
     height: 100%;
 }
 
-th {
-    position: fixed;
+.bannerImg {
+    width: 100%;
+    height: 100%;
+}
+
+mat-sidenav-container {
+    width: 100%;
+}
+
+mat-sidenav {
+    width: 15%;
+    padding: 15px;
+}
+
+mat-sidenav-content {
+    background-color: white;
+    max-height: 100%;
+}
+
+mat-form-field {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+mat-card-header {
+    cursor: pointer;
+}
+
+.example-card {
+    width: 85%;
+    height: 85%;
+    border: solid 1px;
+
+}
+
+.btn {
+    background-color: #11bf54;
+    color: whitesmoke;
+    margin-left: 10px;
+    float: right;
+}
+
+
+.boxImage {
     background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    cursor: pointer;
 }
 
-
-.cateTable {
-    height: 250px;
-    overflow: auto;
+.image {
+    width: 70%;
+    height: 90%;
+    margin-top: 10px;
 }
 
-
-.proTable {
-    height: 250px;
-    overflow: auto;
+.quantityStatus1 {
+    background-color: #11bf54;
+    padding: 5px;
+    border-radius: 8px;
+    color: whitesmoke;
 }
 
-.proColumn {
-    text-align: center;
+.boxPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnPage {
+    background-color: #11bf54;
+    color: whitesmoke;
+    margin-left: 20px;
+    margin-right: 20px;
 }

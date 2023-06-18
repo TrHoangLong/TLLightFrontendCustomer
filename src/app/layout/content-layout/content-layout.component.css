@@ -4,8 +4,6 @@
 }
 
 .body {
-    padding-top: 15px;
-    padding-left: 15px;
     height: 85%;
     width: 100%;
 }
@@ -16,10 +14,6 @@
     width: 100%;
 }
 
-.sideNavOpen{
-    width: 90%;
-    transition: all .1s;
-}
 
 .header{
     position: sticky;

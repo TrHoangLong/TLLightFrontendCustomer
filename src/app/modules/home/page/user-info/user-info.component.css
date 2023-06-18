@@ -1,0 +1,47 @@
+.boxTitle {
+    max-width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.boxContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card {
+    width: 80%;
+    height: 80%;
+}
+
+mat-grid-list {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 70% ;
+    font-weight: 600;
+    color: black;
+}
+
+mat-grid-tile {
+    align-items: center;
+}
+
+.boxButton {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.btnCart {
+    border-style: solid;
+    background-color: #11bf54;
+    color: white;
+}

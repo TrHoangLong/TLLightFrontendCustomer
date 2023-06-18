@@ -1,12 +1,11 @@
 .header {
     height: 60px;
-    background-color: #bdab45;
+    background-color: #11bf54;
     display: flex;
 }
 
 .logoImage {
     height: 110px;
-    cursor: pointer;
 }
 
 
@@ -19,4 +18,25 @@
 mat-icon {
     color: whitesmoke;
     font-size: 35px;
+}
+
+span {
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.login {
+    cursor: pointer;
+    
+}
+
+.login:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

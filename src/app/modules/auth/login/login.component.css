@@ -1,0 +1,40 @@
+.example-card {
+    width: 400px;
+}
+
+.header {
+    justify-content: center;
+    color: #11bf54;
+}
+
+.button{
+    background-color: #11bf54;
+}
+
+.login {
+    justify-content: center;
+    display: flex;
+    height: max-content;
+    padding-top: 15%;
+    background-image: url(../../../../assets/images/energy.svg); 
+    background-size: 90%; 
+    background-position: center;
+}
+
+.form-login {
+    display: flex;
+}
+
+.footer {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+.footer .button {
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

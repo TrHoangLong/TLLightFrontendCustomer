@@ -1,0 +1,59 @@
+
+.example-container {
+    width: 100%;
+    height: 600px;
+}
+
+mat-drawer {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-drawer-content {
+    background-color: white;
+    padding-left: 1%;
+}
+
+.boxButton {
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.btnCart {
+    border-color: #11bf54;
+    border-style: solid;
+    color: #11bf54;
+}
+
+.btn {
+    background-color: #11bf54;
+    color: whitesmoke;
+    margin-left: 10px;
+    float: right;
+}
+
+.boxImg {
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    width: 95%;
+    height: 65%;
+    margin-top: 10px;
+    border: solid;
+    border-radius: 10px;
+}
+
+.input {
+    width: 20%;
+}
+
+.decription {
+    background-color: whitesmoke;
+    padding: 5px;
+}

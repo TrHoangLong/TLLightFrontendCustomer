@@ -1,1 +1,35 @@
-<p>order-hist works!</p>
+<div class="boxTitle">
+    <p class="title">Đơn hàng</p>
+    <br>
+    <hr>
+</div>
+
+<div class="cartContent">
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" hidden></mat-sidenav>
+
+        <mat-sidenav-content>
+            <mat-grid-list cols="1" rowHeight="4:1">
+                <mat-grid-tile *ngFor="let order of custOrderList">
+                    <mat-card class="example-card mat-elevation-z8">
+                        <div class="example-section">
+                            <button class="btn" [disabled]="order.orderStatus === 8 || order.orderStatus === 9" mat-raised-button (click)="cancel(order)">Yêu cầu hủy</button>
+                        </div>
+                        <div class="boxImage">
+                            <img class="productImage" [src]="order.linkProductImage">
+                        </div>
+                        <mat-card-content class="boxContent">
+                            <h1>{{order.productName}}</h1>
+                            <h3><span>Giá:</span> {{order.productPrice | number: '1.0-0'}}<span> - Số lượng mua hàng:</span> {{order.quantity | number: '1.0-0'}} </h3>
+                            <h3><span>Tổng tiền:</span> {{order.totalPrice | number: '1.0-0'}} </h3>
+                            <h3><span>Trạng thái:</span> {{getStatus(order.orderStatus).name}}</h3>
+                            <h3><span>Khách hàng:</span> {{order.custName}} <span>- Số điện thoại:</span> {{order.mobileNo}}</h3>
+                            <h3><span>Địa chỉ:</span> {{order.address}}</h3>
+                        </mat-card-content>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>

@@ -1,1 +1,75 @@
-<p>signup works!</p>
+<div class="background">
+    <mat-card class="example-card mat-elevation-z8">
+        <mat-card-header class="header">
+            <mat-card-title>
+                <p class="title">Đăng ký tài khoản</p>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Họ và tên: </mat-label>
+                        <input type="text" [(ngModel)]="custName" matInput required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Giới tính: </mat-label>
+                        <mat-select [(value)]="gender" class="select" required>
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let gender of genderList"
+                                value="{{gender.value}}">{{gender.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width date">
+                        <mat-label>Ngày sinh: </mat-label>
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="birthday" name="birthday">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Địa chỉ: </mat-label>
+                        <input type="text" matInput [(ngModel)]="address" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Email: </mat-label>
+                        <input type="text" matInput [(ngModel)]="email" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Số điện thoại: </mat-label>
+                        <input type="text" matInput [(ngModel)]="mobileNo" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Mật khẩu: </mat-label>
+                        <input type="text" [type]="hide1 ? 'password' : 'text'" matInput [(ngModel)]="password" required>
+                        <mat-icon class="hide-pass" matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Nhập lại mật khẩu: </mat-label>
+                        <input type="text" [type]="hide2 ? 'password' : 'text'" matInput [(ngModel)]="confirmPassword" required>
+                        <mat-icon class="hide-pass" matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-card-actions class="footer">
+            <button mat-raised-button class="button" (click)="signUp()">Đăng ký</button>
+            <button mat-raised-button class="button" (click)="exit()">Thoát</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

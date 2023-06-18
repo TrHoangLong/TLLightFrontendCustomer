@@ -10,5 +10,51 @@ import { HOST_CUST } from '../constants/api';
 })
 export class CustService {
 
-  constructor() { }
+  httpOptions = {
+    headers: null
+  };
+
+  setHeader(header: any): void {
+    this.httpOptions = header;
+  }
+
+  constructor(private http: HttpClient, private roleService: RoleService) {
+    const header = {
+      'content-type': 'application/json',
+      authorization: roleService.getToken()
+    };
+
+    this.httpOptions = {
+      headers: new HttpHeaders(header)
+    };
+  }
+
+  updateInfo(payload: any) {
+    return this.http.post<Response>(HOST_CUST + 'customeruser/update', payload, this.httpOptions).pipe(
+      catchError(this.handleError('customeruser update', payload))
+    );
+  }
+
+  getInfo(payload: any) {
+    return this.http.post<Response>(HOST_CUST + 'customeruser/getbyid', payload, this.httpOptions).pipe(
+      catchError(this.handleError('customeruser getbyid', payload))
+    );
+  }
+
+
+  private handleError<T>(operation = 'operation', result ?): any {
+  return (error: any): Observable<T> => {
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
+    // TODO: better job of transforming error for user consumption
+    this.log(`${operation} failed: ${error.message}`);
+
+    // Let the app keep running by returning an empty result.
+    return of(result as T);
+  };
+  }
+
+  private log(message: string): void {
+  // console.log(`Mstservice: ${message}`);
+  }
 }

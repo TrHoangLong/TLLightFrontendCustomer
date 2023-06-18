@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{title}}</h1>
+
+<div mat-dialog-content>
+    <p *ngIf="action !== ACTION_UPDATE">{{message}}</p>
+
+    <mat-grid-list cols="1" rowHeight="3:1" *ngIf="action === ACTION_UPDATE">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Số lượng</mat-label>
+                <input type="text" matInput [(ngModel)]="quantity">
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-stroked-button class="btnNo" (click)="onNoClick()">Đóng</button>
+    <button mat-raised-button (click)="onYesClick()" class="btnYes" color="primary">{{messageYes}}</button>
+</div>

@@ -28,4 +28,8 @@ export class ContentLayoutComponent implements OnInit {
   routerMenu(key: string) {
     this.router.navigate(['/dashboard/' + key]);
   }
+
+  refresh() {
+    window.location.reload();
+  }
 }
