@@ -7,12 +7,12 @@ import { SysRole } from 'src/app/data/schema/sys-role';
 export class RoleService {
 
   ROLE_KEY = 'access';
-  EMAIL = 'email';
-  PASSWORD = 'password';
+  EMAIL = 'email-cust';
+  PASSWORD = 'password-cust';
 
-  TOKEN_KEY = 'log-in';
-  IS_SAVE = 'is_save_login';
-  BUSINESS_DATE = 'business_date';
+  TOKEN_KEY = 'log-in-cust';
+  IS_SAVE = 'is_save_login-cust';
+  BUSINESS_DATE = 'business_date-cust';
 
   constructor() {
   }

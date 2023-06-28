@@ -1,18 +1,8 @@
 <h1 mat-dialog-title>{{title}}</h1>
 
 <div mat-dialog-content>
-    <p *ngIf="action === ACTION_DELETE">{{message}}</p>
 
-    <mat-grid-list cols="1" rowHeight="3:1" *ngIf="action === ACTION_UPDATE">
-        <mat-grid-tile>
-            <mat-form-field appearance="outline">
-                <mat-label>Số lượng</mat-label>
-                <input type="text" matInput [(ngModel)]="quantity">
-            </mat-form-field>
-        </mat-grid-tile>
-    </mat-grid-list>
-
-    <div *ngIf="action === ACTION_ORDER">
+    <div *ngIf="action === ACTION_PRODUCT_ORDER">
         <mat-grid-list cols="2" rowHeight="3:1">
             <mat-grid-tile>
                 <mat-form-field appearance="outline">

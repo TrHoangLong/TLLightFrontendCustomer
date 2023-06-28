@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/core/service/auth.service';
 import { HomeComponent } from '../../home.component';
 import { CartService } from 'src/app/core/service/cart.service';
 import { OrderService } from 'src/app/core/service/order.service';
+import { AcceptOrderComponent } from './accept-order/accept-order.component';
 
 @Component({
   selector: 'app-product-dialog',
@@ -22,7 +23,8 @@ export class ProductDialogComponent implements OnInit {
 
   quantity: number = 1;
 
-  constructor(public dialogRef: MatDialogRef<HomeComponent>,
+  constructor(private dialog: MatDialog,
+    public dialogRef: MatDialogRef<HomeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private roleService: RoleService,
     private utilsService: UtilsService,
@@ -67,7 +69,7 @@ export class ProductDialogComponent implements OnInit {
           }
         });
       } else {
-        this.utilsService.processResponseError(response, 'Lỗi: ' + response.errorMsg);
+        this.utilsService.processResponseError(response, 'Lỗi: ' + 'Bạn chưa đăng nhập');
       }
     });
 
@@ -80,22 +82,21 @@ export class ProductDialogComponent implements OnInit {
 
     this.authService.checkLogin(token).subscribe(response => {
       if (response.resultCode == 0) {
-        const payload = {
-          productId: this.product.productId,
-          quantity: this.quantity
-        }
-
-        this.orderService.productOrder(payload).subscribe(response => {
-          if (response.resultCode == 0) {
-            this.dialogRef.close();
-            this.utilsService.processResponseError(response, "Đặt hàng thành công");
-          }
-          else {
-            this.utilsService.processResponseError(response, 'Lỗi: ' + response.errorMsg);
+        const dialogRef = this.dialog.open(AcceptOrderComponent, {
+          width: '800px',
+          data: {
+            action: 'ProductOrder',
+            data: {
+              quantity: this.quantity,
+              productId: this.product.productId
+            }
           }
         });
+
+        dialogRef.afterClosed().subscribe(result => {
+        });
       } else {
-        this.utilsService.processResponseError(response, 'Lỗi: ' + response.errorMsg);
+        this.utilsService.processResponseError(response, 'Lỗi: ' + 'Bạn chưa đăng nhập');
       }
     });
 

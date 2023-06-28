@@ -1,3 +1,3 @@
-export const HOST_CUST= 'http://localhost:8086/tllight-backend/apicust/'
+export const HOST_CUST= 'http://localhost:8080/tl_backend/apicust/'
 
-export const LINK_IMAGE = 'http://localhost:8086/TLLightCustomerWeb/assets/images/'
+export const LINK_IMAGE = 'http://localhost:8080/TLLightCustomerWeb/assets/images/'

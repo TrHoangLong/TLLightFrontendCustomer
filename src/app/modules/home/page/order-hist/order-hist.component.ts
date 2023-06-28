@@ -1,4 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
@@ -21,8 +22,10 @@ export class OrderHistComponent implements OnInit {
   statusList: any;
 
   constructor(private dialog: MatDialog,
+    private router: Router,
     private roleService: RoleService,
     private utilsService: UtilsService,
+    private authService: AuthService,
     private productSevice: ProductService,
     private orderService: OrderService) {
     this.statusList = CUST_ORDER_STATUS;
@@ -30,6 +33,20 @@ export class OrderHistComponent implements OnInit {
 
   ngOnInit(): void {
     this.search();
+    this.checkLogin();
+  }
+
+  checkLogin() {
+    const token = {
+      token: this.roleService.getToken()
+    }
+
+    this.authService.checkLogin(token).subscribe(response => {
+      if (response.resultCode == 0) {
+      } else {
+        this.router.navigate(['/dashboard/home']);
+      }
+    });
   }
 
   getStatus(status: any): any {

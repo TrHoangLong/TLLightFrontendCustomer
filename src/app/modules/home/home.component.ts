@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   categoryId: string;
 
   offset = 0;
-  limit = 8;
+  limit = 6;
 
   totalRow: number;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
       this.limit = event.pageSize;
       this.offset = event.pageIndex;
     } else {
-      this.limit = 8;
+      this.limit = 6;
       this.offset = 0;
     }
 

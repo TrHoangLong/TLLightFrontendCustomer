@@ -20,7 +20,7 @@ export class UtilsService {
       if (response.errorCode && typeof response.errorCode == 'string' && response.errorCode.indexOf('ErrToken') !== -1) {
           this.snackBar.openFromComponent(SnackBarMessagesComponent, {
               duration: 5 * 1000,
-              data: 'Vui lòng đăng nhập để thực hiện chức năng này',
+              data: message,
               panelClass: ['redSnackbar']
           });
           const token: string = this.roleService.getToken();

@@ -54,9 +54,7 @@ export class HeaderComponent implements OnInit {
     this.authService.checkLogin(token).subscribe(response => {
       if (response.resultCode == 0) {
         this.isLogin = 1
-      } else {
-        this.utilsService.processResponseError(response, 'Lỗi: ' + response.errorMsg);
-      }
+      } 
     });
   }
 

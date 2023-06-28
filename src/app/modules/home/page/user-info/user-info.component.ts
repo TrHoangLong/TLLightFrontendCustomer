@@ -1,4 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,6 +21,8 @@ export class UserInfoComponent implements OnInit {
   genderList: any;
 
   constructor(private dialog: MatDialog,
+    private router: Router,
+    private authService: AuthService,
     private roleService: RoleService,
     private utilsService: UtilsService,
     private custService: CustService
@@ -29,6 +32,20 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserInfo();
+    this.checkLogin();
+  }
+
+  checkLogin() {
+    const token = {
+      token: this.roleService.getToken()
+    }
+
+    this.authService.checkLogin(token).subscribe(response => {
+      if (response.resultCode == 0) {
+      } else {
+        this.router.navigate(['/dashboard/home']);
+      }
+    });
   }
 
   getUserInfo() {

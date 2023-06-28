@@ -1,4 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
@@ -25,10 +26,12 @@ export class CartComponent implements OnInit {
 
   selection = new SelectionModel<any>(true, []);
 
-  constructor(private dialog: MatDialog,
+  constructor(private router: Router,
+    private dialog: MatDialog,
     private roleService: RoleService,
     private utilsService: UtilsService,
     private productSevice: ProductService,
+    private authService: AuthService,
     private cartService: CartService) {
       this.statusList = CUST_CART_STATUS;
     }
@@ -36,6 +39,21 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.search();
     this.getAllProduct();
+
+    this.checkLogin();
+  }
+
+  checkLogin() {
+    const token = {
+      token: this.roleService.getToken()
+    }
+
+    this.authService.checkLogin(token).subscribe(response => {
+      if (response.resultCode == 0) {
+      } else {
+        this.router.navigate(['/dashboard/home']);
+      }
+    });
   }
 
   getStatus(status: any): any {
@@ -115,7 +133,7 @@ export class CartComponent implements OnInit {
     const cart = this.selection.selected;
 
     const dialogRef = this.dialog.open(CartDialogComponent, {
-      width: '400px',
+      width: '800px',
       data: {
         action: 'CartOrder',
         data: cart

@@ -34,6 +34,7 @@ import { InfoShopComponent } from './page/info-shop/info-shop.component';
 import { ContactShopComponent } from './page/contact-shop/contact-shop.component';
 import { OrderHistDialogComponent } from './page/order-hist/order-hist-dialog/order-hist-dialog.component';
 import { UserInfoDialogComponent } from './page/user-info/user-info-dialog/user-info-dialog.component';
+import { AcceptOrderComponent } from './page/product-dialog/accept-order/accept-order.component'; 
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { UserInfoDialogComponent } from './page/user-info/user-info-dialog/user-
     InfoShopComponent,
     ContactShopComponent,
     OrderHistDialogComponent,
-    UserInfoDialogComponent
+    UserInfoDialogComponent,
+    AcceptOrderComponent
   ],
   imports: [
     CommonModule,
