@@ -41,6 +41,9 @@ export class CartComponent implements OnInit {
     this.getAllProduct();
 
     this.checkLogin();
+
+    console.log(this.custCartList.length);
+    
   }
 
   checkLogin() {

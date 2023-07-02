@@ -2,7 +2,7 @@
     <p class="title">Giỏ hàng</p>
     <br>
     <hr>
-    <button class="btnOrder" mat-raised-button (click)="order()">Đặt hàng</button>
+    <button class="btnOrder" mat-raised-button [disabled]="custCartList.length === 0" (click)="order()">Đặt hàng</button>
 </div>
 
 <div class="cartContent">
