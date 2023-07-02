@@ -1,0 +1,60 @@
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-sidenav-container {
+    width: 97%;
+    height: 70%;
+}
+
+.mat-form-field {
+    padding: 0;
+    margin: 0;
+    width: 95%;
+}
+
+mat-sidenav {
+    width: 17%;
+}
+
+mat-sidenav-content {
+    width: 83%;
+    background-color: white;
+}
+
+
+.btn {
+    background-color: #11bf54;
+    color: whitesmoke;
+    margin-left: 10px;
+    float: right;
+}
+
+.example-card {
+    width: 90%;
+    height: 90%;
+    border: solid 1px;
+}
+
+mat-card-header {
+    margin-bottom: 5%;
+}
+
+.boxImage {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    height: 65%;
+    width: 100%;
+}
+
+.image {
+    width: 50%;
+    height: 90%;
+    margin-top: 10px;
+}
+
+

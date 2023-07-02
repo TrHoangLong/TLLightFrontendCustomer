@@ -7,6 +7,7 @@ import { UserInfoComponent } from './page/user-info/user-info.component';
 import { OrderHistComponent } from './page/order-hist/order-hist.component';
 import { InfoShopComponent } from './page/info-shop/info-shop.component';
 import { ContactShopComponent } from './page/contact-shop/contact-shop.component';
+import { ListProductComponent } from './page/list-product/list-product.component';
 
 const routes: Routes =[
     {
@@ -41,6 +42,10 @@ const routes: Routes =[
                 path: 'contact-shop',
                 component: ContactShopComponent
             },
+            {
+                path: 'list-product',
+                component: ListProductComponent
+            }
         ]
       }
     

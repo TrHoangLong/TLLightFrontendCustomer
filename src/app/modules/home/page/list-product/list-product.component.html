@@ -1,0 +1,42 @@
+<div class="content">
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened>
+            <h1>Loại sản phẩm</h1>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Loại sản phẩm</mat-label>
+                    <mat-select [(value)]="categoryId" class="select">
+                        <mat-option>Tất cả</mat-option>
+                        <mat-option *ngFor="let category of categoryList"
+                            value="{{category.categoryId}}">{{category.categoryName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button class="btn" (click)="search(null)">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <mat-grid-list cols="4" rowHeight="1:1">
+                <mat-grid-tile *ngFor="let product of productList">
+                    <mat-card class="example-card">
+                        <mat-card-header style="height: 30%;" (click)="productDetail(product)">
+                            <mat-card-title style="font-size: 120%;">{{product.productName}}</mat-card-title>
+                            <mat-card-subtitle>Giá bán: {{product.productPrice | number: '1.0-0'}}</mat-card-subtitle>
+                            <mat-card-subtitle>Tình trạng: <span
+                                    class="quantityStatus1">{{product.quantityStatus}}</span></mat-card-subtitle>
+                        </mat-card-header>
+                        <div class="boxImage" (click)="productDetail(product)">
+                            <img [src]="product.linkProductImage" class="preview1" class="image">
+                        </div>
+                        <br>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-paginator [length]="totalRow" [pageSize]="limit" (page)="search($event)">
+            </mat-paginator>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>

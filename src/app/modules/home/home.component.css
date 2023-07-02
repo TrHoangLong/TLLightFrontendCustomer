@@ -9,7 +9,7 @@ mat-tab-group {
 }
 
 .content {
-    max-height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -24,28 +24,32 @@ mat-tab-group {
     height: 100%;
 }
 
-mat-sidenav-container {
+.boxProductHot {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-mat-sidenav {
-    width: 15%;
-    padding: 15px;
+hr {
+    width: 40%;
+    color: #11bf54;
+    font-weight: bold;
 }
 
-mat-sidenav-content {
-    background-color: white;
-    max-height: 100%;
+.titleProductHot {
+    font-size: 24px;
+    color: #11bf54;
+    margin: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
-mat-form-field {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
+.productHot {
+    width: 80%;
 }
 
-mat-card-header {
+.banner {
     cursor: pointer;
 }
 
@@ -53,14 +57,10 @@ mat-card-header {
     width: 85%;
     height: 85%;
     border: solid 1px;
-
 }
 
-.btn {
-    background-color: #11bf54;
-    color: whitesmoke;
-    margin-left: 10px;
-    float: right;
+.mat-card-header {
+    padding-left: 10px;
 }
 
 
@@ -78,22 +78,24 @@ mat-card-header {
     margin-top: 10px;
 }
 
-.quantityStatus1 {
-    background-color: #11bf54;
-    padding: 5px;
-    border-radius: 8px;
-    color: whitesmoke;
-}
-
-.boxPage {
-    width: 100%;
+.footer {
+    background-color: #424242;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    height: 250px;
 }
 
-.btnPage {
-    background-color: #11bf54;
+
+.mapouter {
+    margin-right: 3%;
+    margin-left: 50px;
+}
+
+mat-icon{
     color: whitesmoke;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
+}
+
+.address span {
+    color: whitesmoke;
 }

@@ -9,45 +9,70 @@
     </mat-tab-group>
 </div>
 
+<div class="boxProductHot">
+    <hr>
+    <p class="titleProductHot">Sản phẩm bán chạy</p>
+    <hr>
+</div>
+
 <div class="content">
-    <mat-sidenav-container>
-        <mat-sidenav mode="side" opened>
-            <h1>Loại sản phẩm</h1>
-            <div>
-                <mat-form-field appearance="outline">
-                    <mat-label>Loại sản phẩm</mat-label>
-                    <mat-select [(value)]="categoryId" class="select">
-                        <mat-option>None</mat-option>
-                        <mat-option *ngFor="let category of categoryList"
-                            value="{{category.categoryId}}">{{category.categoryName}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <button mat-raised-button class="btn" (click)="search(null)">
-                <mat-icon>search</mat-icon>
-            </button>
-        </mat-sidenav>
+    <div class="productHot">
+        <mat-grid-list cols="3" rowHeight="1:1">
+            <mat-grid-tile *ngFor="let product of productList">
+                <div class="example-card">
+                    <div class="mat-card-header" style="height: 30%;" (click)="productDetail(product)">
+                        <h1 style="font-size: 20px;">{{product.productName}}</h1>
+                        <p>Giá bán: {{product.productPrice | number: '1.0-0'}}</p>
+                        <p>Tình trạng: <span
+                                class="quantityStatus1">{{product.quantityStatus}}</span></p>
+                    </div>
+                    <div class="boxImage" (click)="productDetail(product)">
+                        <img [src]="product.linkProductImage" class="preview1" class="image">
+                    </div>
+                    <br>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
+<br>
+<br>
+<div class="footer">
+    <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="400" height="200" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=20.915977, 105.696595&t=&z=18&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                href="https://2yu.co"></a><br>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                }
+            </style><a href="https://embedgooglemap.2yu.co"></a>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                }
+            </style>
+        </div>
+    </div>
 
-        <mat-sidenav-content>
-            <mat-grid-list cols="3" rowHeight="1:1">
-                <mat-grid-tile *ngFor="let product of productList">
-                    <mat-card class="example-card">
-                        <mat-card-header style="height: 30%;" (click)="productDetail(product)">
-                            <mat-card-title style="font-size: 120%;">{{product.productName}}</mat-card-title>
-                            <mat-card-subtitle>Giá bán: {{product.productPrice | number: '1.0-0'}}</mat-card-subtitle>
-                            <mat-card-subtitle>Tình trạng: <span
-                                    class="quantityStatus1">{{product.quantityStatus}}</span></mat-card-subtitle>
-                        </mat-card-header>
-                        <div class="boxImage" (click)="productDetail(product)">
-                            <img [src]="product.linkProductImage" class="preview1" class="image">
-                        </div>
-                        <br>
-                    </mat-card>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-paginator [length]="totalRow" [pageSize]="limit" (page)="search($event)">
-            </mat-paginator>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-
+    <div class="address">
+        <h3 style="color: whitesmoke;">CỬA HÀNG ĐÈN NĂNG LƯỢNG MẶT TRỜI TI-LIGHT</h3>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon>email</mat-icon>
+                <span class="addressSpan">Email: tl.solar.light@gmail.com</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>call</mat-icon>
+                <span class="addressSpan">Số điện thoại: 0394797658</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>home</mat-icon>
+                <span class="addressSpan">Địa chỉ: Chúc Lý, Ngọc Hòa, Chương Mỹ, Hà Nội</span>
+            </mat-list-item>
+        </mat-list>
+    </div>
 </div>
