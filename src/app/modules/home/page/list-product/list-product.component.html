@@ -22,8 +22,9 @@
                 <mat-grid-tile *ngFor="let product of productList">
                     <mat-card class="example-card">
                         <mat-card-header style="height: 30%;" (click)="productDetail(product)">
-                            <mat-card-title style="font-size: 120%;">{{product.productName}}</mat-card-title>
-                            <mat-card-subtitle>Giá bán: {{product.productPrice | number: '1.0-0'}}</mat-card-subtitle>
+                            <mat-card-title style="font-size: 120%;
+                            height: 40%;">{{product.productName}}</mat-card-title>
+                            <mat-card-subtitle style="margin-bottom: 10px;">Giá bán: {{product.productPrice | number: '1.0-0'}}</mat-card-subtitle>
                             <mat-card-subtitle>Tình trạng: <span
                                     class="quantityStatus1">{{product.quantityStatus}}</span></mat-card-subtitle>
                         </mat-card-header>

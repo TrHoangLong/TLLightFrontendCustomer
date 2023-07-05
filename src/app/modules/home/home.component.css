@@ -61,6 +61,7 @@ hr {
 
 .mat-card-header {
     padding-left: 10px;
+    display: block;
 }
 
 

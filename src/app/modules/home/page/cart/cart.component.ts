@@ -115,6 +115,7 @@ export class CartComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.search();
+      this.selection.clear();
     });
   }
 
@@ -129,6 +130,7 @@ export class CartComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.search();
+      this.selection.clear();
     });
   }
 
@@ -145,6 +147,7 @@ export class CartComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.search();
+      this.selection.clear();
     });
   }
 }

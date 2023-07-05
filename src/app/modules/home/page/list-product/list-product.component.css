@@ -41,6 +41,8 @@ mat-sidenav-content {
 
 mat-card-header {
     margin-bottom: 5%;
+    align-items: center;
+    width: 100%;
 }
 
 .boxImage {

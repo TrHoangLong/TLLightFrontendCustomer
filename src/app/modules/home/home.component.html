@@ -19,12 +19,11 @@
     <div class="productHot">
         <mat-grid-list cols="3" rowHeight="1:1">
             <mat-grid-tile *ngFor="let product of productList">
-                <div class="example-card">
+                <div class="example-card mat-elevation-z8">
                     <div class="mat-card-header" style="height: 30%;" (click)="productDetail(product)">
                         <h1 style="font-size: 20px;">{{product.productName}}</h1>
                         <p>Giá bán: {{product.productPrice | number: '1.0-0'}}</p>
-                        <p>Tình trạng: <span
-                                class="quantityStatus1">{{product.quantityStatus}}</span></p>
+                        <p>Tình trạng: <span class="quantityStatus1">{{product.quantityStatus}}</span></p>
                     </div>
                     <div class="boxImage" (click)="productDetail(product)">
                         <img [src]="product.linkProductImage" class="preview1" class="image">

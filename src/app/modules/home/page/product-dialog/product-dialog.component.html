@@ -13,10 +13,15 @@
             </mat-form-field>
         </div>
 
-        <mat-list class="decription">
-            <h2>Mô tả: </h2>
-            <mat-list-item *ngFor="let item of getDescription(product.description)">{{item}}</mat-list-item>
-        </mat-list>
+        <div class="decription">
+            <h2>Thông số sản phẩm: </h2>
+            <h3>Công suất: {{product.wattage}}</h3>
+            <h3>Chất liệu: {{product.material}}</h3>
+            <h3>Dung lượng pin: {{product.battery}}</h3>
+            <h3>Kích thước pin: {{product.batterySize}}</h3>
+            <h3>Thời lượng sáng: {{product.lightingTime}}</h3>
+            <h3>Thời lượng sạc: {{product.chargingTime}}</h3>
+        </div>
     </mat-drawer-content>
 </mat-drawer-container>
 <br>

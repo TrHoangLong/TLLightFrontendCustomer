@@ -38,14 +38,7 @@ export class ProductDialogComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-
-  }
-
-  getDescription(description: string): any {
-    let result = description.split(';')
-    return result
-  }
+  ngOnInit(): void {}
 
   addCart() {
     const token = {
